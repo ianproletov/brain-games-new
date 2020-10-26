@@ -12,7 +12,7 @@ export default (makeStep, task) => {
     console.log(`Question: ${question}`);
     const playerAnswer = readlineSync.question('Answer: ');
     if (playerAnswer !== rightAnswer) {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct anawer was '${rightAnswer}'.`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${playerName}!`);
       return;
     }
