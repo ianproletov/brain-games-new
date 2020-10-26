@@ -1,3 +1,7 @@
 #!/usr/bin/env node
 
-console.log('Welcome to the Brain Games!')
+import { getPlayerName } from '..';
+
+console.log('Welcome to the Brain Games!\n');
+const playerName = getPlayerName();
+console.log(`Hello, ${playerName}!`);
