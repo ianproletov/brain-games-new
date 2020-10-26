@@ -1,0 +1,15 @@
+{
+  "name": "brain-games",
+  "version": "0.0.1",
+  "description": "Second implementation of the first hexlet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexlet",
+    "brain-games"
+  ],
+  "author": "ian proletov",
+  "license": "ISC"
+}
