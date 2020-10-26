@@ -1,9 +1,9 @@
-import readlineSync, { setDefaultOptions } from 'readline-sync';
+import readlineSync from 'readline-sync';
 
-const task =  'Answer "yes" if number even otherwise answer "no".';
+const task = 'Answer "yes" if number even otherwise answer "no".';
 const steps = 3;
 
-const isEven = number => number % 2 === 0;
+const isEven = (number) => number % 2 === 0;
 
 const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 
