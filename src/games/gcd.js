@@ -5,13 +5,11 @@ const task = 'Find the greatest common divisor of given numbers.';
 const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 
 const getDivisor = (firstArgument, secondArgument) => {
-  const lessArgument = (firstArgument > secondArgument) ? secondArgument : firstArgument;
-  for (let i = lessArgument; i > 1; i -= 1) {
-    if (firstArgument % i === 0 && secondArgument % i === 0) {
-      return i;
-    }
+  let nod = Math.min(firstArgument, secondArgument);
+  while (firstArgument % nod !== 0 || secondArgument % nod !== 0) {
+    nod -= 1;
   }
-  return 1;
+  return nod;
 };
 
 const makeStep = () => {
