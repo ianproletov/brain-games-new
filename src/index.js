@@ -1,22 +1,45 @@
 import readlineSync from 'readline-sync';
+import makeEvenGame from './games/even';
+import makeProgressionGame from './games/progression';
+import makeGcdGame from './games/gcd';
+import makePrimeGame from './games/prime';
+import makeCalcGame from './games/calc';
 
-const steps = 3;
-
-export default (makeStep, task) => {
+export default () => {
   console.log('Welcome to the Brain Games!');
-  console.log(`${task}\n`);
   const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!\n`);
-  for (let i = 0; i < steps; i += 1) {
-    const { rightAnswer, question } = makeStep();
-    console.log(`Question: ${question}`);
-    const playerAnswer = readlineSync.question('Answer: ');
-    if (playerAnswer !== rightAnswer) {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-      console.log(`Let's try again, ${playerName}!`);
-      return;
+  let choice;
+  do {
+    console.log('Please, choose your game:\n');
+    console.log('1) - brain-even');
+    console.log('2) - brain-progression');
+    console.log('3) - brain-gcd');
+    console.log('4) - brain-prime');
+    console.log('5) - brain-calc');
+    console.log('q - quit\n');
+    choice = readlineSync.question('Make your choice: ');
+    switch (choice) {
+      case '1':
+        makeEvenGame(playerName);
+        break;
+      case '2':
+        makeProgressionGame(playerName);
+        break;
+      case '3':
+        makeGcdGame(playerName);
+        break;
+      case '4':
+        makePrimeGame(playerName);
+        break;
+      case '5':
+        makeCalcGame(playerName);
+        break;
+      case 'q':
+        console.log(`Good-bye, ${playerName}!`);
+        break;
+      default:
+        console.log('Wrong! Please, try again!');
     }
-    console.log('Correct!');
-  }
-  console.log(`Congratilations, ${playerName}`);
+  } while (choice !== 'q');
 };

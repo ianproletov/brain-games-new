@@ -1,5 +1,4 @@
-import makeGame from '..';
-import getRandomNumber from '../utils';
+import getRandomNumber, { makeGame } from '../utils';
 
 const task = 'Answer "yes" if number even otherwise answer "no".';
 
@@ -11,4 +10,4 @@ const makeStep = () => {
   return ({ rightAnswer, question: `${currentNumber}` });
 };
 
-export default () => makeGame(makeStep, task);
+export default (playerName) => makeGame(makeStep, task, playerName);

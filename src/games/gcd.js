@@ -1,5 +1,4 @@
-import makeGame from '..';
-import getRandomNumber from '../utils';
+import getRandomNumber, { makeGame } from '../utils';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
@@ -18,4 +17,4 @@ const makeStep = () => {
   return ({ rightAnswer, question: `${firstArgument} ${secondArgument}` });
 };
 
-export default () => makeGame(makeStep, task);
+export default (playerName) => makeGame(makeStep, task, playerName);
