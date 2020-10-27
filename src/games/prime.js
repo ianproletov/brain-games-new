@@ -11,10 +11,6 @@ const isPrime = (number) => {
   return true;
 };
 
-const makeStep = () => {
-  const currentNumber = getRandomNumber(3, 99);
-  const rightAnswer = getYesOrNo(isPrime(currentNumber));
-  return ({ rightAnswer, question: `${currentNumber}` });
-};
+const makeStep = () => getYesOrNo(isPrime, getRandomNumber(3, 99));
 
 export default (playerName) => makeGame(makeStep, task, playerName);

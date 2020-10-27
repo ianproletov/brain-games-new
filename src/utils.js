@@ -2,7 +2,10 @@ import readlineSync from 'readline-sync';
 
 export const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 
-export const getYesOrNo = (predicate) => (predicate ? 'yes' : 'no');
+export const getYesOrNo = (predicateFunction, number) => {
+  const rightAnswer = predicateFunction(number) ? 'yes' : 'no';
+  return ({ rightAnswer, question: `${number}` });
+};
 
 export default (makeStep, task, playerName = 'guest') => {
   const steps = 3;
