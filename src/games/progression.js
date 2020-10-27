@@ -1,4 +1,4 @@
-import getRandomNumber, { makeGame } from '../utils';
+import makeGame, { getRandomNumber } from '../utils';
 
 const task = 'What number is missing in the progression?';
 const progressionLength = 10;

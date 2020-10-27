@@ -1,4 +1,4 @@
-import getRandomNumber, { makeGame } from '../utils';
+import makeGame, { getRandomNumber } from '../utils';
 
 const task = 'Find the greatest common divisor of given numbers.';
 

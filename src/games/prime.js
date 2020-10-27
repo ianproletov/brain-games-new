@@ -1,4 +1,4 @@
-import getRandomNumber, { makeGame } from '../utils';
+import makeGame, { getRandomNumber, getYesOrNo } from '../utils';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -13,7 +13,7 @@ const isPrime = (number) => {
 
 const makeStep = () => {
   const currentNumber = getRandomNumber(3, 99);
-  const rightAnswer = isPrime(currentNumber) ? 'yes' : 'no';
+  const rightAnswer = getYesOrNo(isPrime(currentNumber));
   return ({ rightAnswer, question: `${currentNumber}` });
 };
 

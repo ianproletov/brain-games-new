@@ -1,8 +1,10 @@
 import readlineSync from 'readline-sync';
 
-export default (min, max) => Math.floor(Math.random() * max) + min;
+export const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 
-export const makeGame = (makeStep, task, playerName = 'guest') => {
+export const getYesOrNo = (predicate) => (predicate ? 'yes' : 'no');
+
+export default (makeStep, task, playerName = 'guest') => {
   const steps = 3;
   console.log(task);
   for (let i = 0; i < steps; i += 1) {
