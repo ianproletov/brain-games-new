@@ -1,8 +1,7 @@
 import makeGame from '..';
+import getRandomNumber from '../utils';
 
 const task = 'What is the result of the expression?';
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 
 const operator = {
   1: { operation: (a, b) => a + b, sign: '+' },

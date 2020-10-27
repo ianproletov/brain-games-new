@@ -1,10 +1,9 @@
 import makeGame from '..';
+import getRandomNumber from '../utils';
 
 const task = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
-
-const getRandomNumber = (min, max) => Math.floor(Math.random() * max) + min;
 
 const makeStep = () => {
   const currentNumber = getRandomNumber(1, 99);
